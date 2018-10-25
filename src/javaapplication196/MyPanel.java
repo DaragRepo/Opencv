@@ -28,8 +28,8 @@ public class MyPanel extends JPanel {
     private JLabel label;
     private JRadioButton buttons[] = new JRadioButton[4];
     public ButtonGroup buttonGroup;
-    private final String filters[] = {"None","Blur", "GaussianBlur", "Median"};
-    private final Filter filter [] = {new GaussianBlur(),new Blur(),new Median()};
+    private final String filters[] = {"None", "Blur", "GaussianBlur", "Median"};
+    private final Filter filter[] = {new GaussianBlur(), new Blur(), new Median()};
 
     public MyPanel() {
 
@@ -71,13 +71,12 @@ public class MyPanel extends JPanel {
                 if (buttonChecked.equals("None")) {
                     MainFrame.setImage();
                 } else {
-                for (int i = 0 ; i < filter.length ; i++) {
-                    if (buttonChecked.equals(filter[i].getClass().getSimpleName())) {
-                    Mat img = MainFrame.getImage();
-                  //  Mat newImage =filter[1].applyFilter(img);
-                    MainFrame.setImageFiltered(img,filter[i]);
+                    for (int i = 0; i < filter.length; i++) {
+                        if (buttonChecked.equals(filter[i].getClass().getSimpleName())) {
+                            Mat img = MainFrame.getImage();
+                            MainFrame.setImageFiltered(img, filter[i]);
+                        }
                     }
-                }
                 }
             }
         }
