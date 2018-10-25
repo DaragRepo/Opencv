@@ -25,7 +25,7 @@ public class MainFrame extends JFrame {
 
     private MyPanel panel;
     private static JLabel image = new JLabel("");
-    private static Mat getImage; 
+    private static Mat getImage;
 
     public MainFrame(int width, int height, String frameName, String imagePath, int flag) throws Exception {
 
@@ -46,19 +46,13 @@ public class MainFrame extends JFrame {
     public static Mat getImage() {
         return getImage;
     }
-    
-     public static void setImage () {
-        image.setIcon(new ImageIcon(ImageHelpers.getImage(getImage))); 
+
+    public static void setImage() {
+        image.setIcon(new ImageIcon(ImageHelpers.getImage(getImage)));
     }
 
-    public static void setImageFiltered(Mat image,Filter filter) {
-      MainFrame.image.setIcon(new ImageIcon(ImageHelpers.getImageFiltered(filter, image))); 
-      //  MainFrame.image.setIcon(new ImageIcon(loadedImage)); 
+    public static void setImageFiltered(Mat image, Filter filter) {
+        MainFrame.image.setIcon(new ImageIcon(ImageHelpers.getImageFiltered(filter, image)));
     }
-   
-
-   
-
- 
 
 }

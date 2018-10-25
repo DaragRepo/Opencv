@@ -12,9 +12,7 @@ import org.opencv.core.Mat;
  * @author moh
  */
 public interface Filter {
-    
 
-    
     public Mat applyFilter(Mat image);
-    
+
 }

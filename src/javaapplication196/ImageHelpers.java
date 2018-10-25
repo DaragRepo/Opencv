@@ -49,18 +49,16 @@ public class ImageHelpers {
         }
         return newImage;
     }
-    
-    public static Image getImageFiltered (Filter filter,Mat image) {
-          Mat img = filter.applyFilter(image);
-          Image loadedImage = toBufferedImage(img);
-          return loadedImage;
+
+    public static Image getImageFiltered(Filter filter, Mat image) {
+        Mat img = filter.applyFilter(image);
+        Image loadedImage = toBufferedImage(img);
+        return loadedImage;
     }
-     public static Image getImage (Mat image) {
-          Image loadedImage = toBufferedImage(image);
-          return loadedImage;
+
+    public static Image getImage(Mat image) {
+        Image loadedImage = toBufferedImage(image);
+        return loadedImage;
     }
-    
-    
-    
 
 }
