@@ -31,7 +31,7 @@ public class MainFrame extends JFrame {
 
         super(frameName);
         getImage = ImageHelpers.openFile(imagePath, flag);
-        image.setIcon(new ImageIcon(ImageHelpers.getImage(getImage))); 
+        setImage();
         panel = new MyPanel();
         add(panel, BorderLayout.WEST);
         add(image, BorderLayout.CENTER);
@@ -46,11 +46,16 @@ public class MainFrame extends JFrame {
     public static Mat getImage() {
         return getImage;
     }
+    
+     public static void setImage () {
+        image.setIcon(new ImageIcon(ImageHelpers.getImage(getImage))); 
+    }
 
-    public static void setImage(Mat image,Filter filter) {
+    public static void setImageFiltered(Mat image,Filter filter) {
       MainFrame.image.setIcon(new ImageIcon(ImageHelpers.getImageFiltered(filter, image))); 
       //  MainFrame.image.setIcon(new ImageIcon(loadedImage)); 
     }
+   
 
    
 

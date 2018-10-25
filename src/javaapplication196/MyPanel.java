@@ -69,13 +69,13 @@ public class MyPanel extends JPanel {
             if (e.getStateChange() == ItemEvent.SELECTED) {
                 String buttonChecked = getSelectedButton();
                 if (buttonChecked.equals("None")) {
-                    
+                    MainFrame.setImage();
                 } else {
                 for (int i = 0 ; i < filter.length ; i++) {
                     if (buttonChecked.equals(filter[i].getClass().getSimpleName())) {
                     Mat img = MainFrame.getImage();
                   //  Mat newImage =filter[1].applyFilter(img);
-                    MainFrame.setImage(img,filter[i]);
+                    MainFrame.setImageFiltered(img,filter[i]);
                     }
                 }
                 }
