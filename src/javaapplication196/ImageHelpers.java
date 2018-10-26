@@ -36,14 +36,9 @@ public class ImageHelpers {
         return image;
     }
 
-    public static Mat openFile(String fileName, int flag) throws Exception {
-        int constant = 0;
-        if (flag == 0) {
-            constant = CV_LOAD_IMAGE_COLOR;
-        } else {
-            constant = IMREAD_GRAYSCALE;
-        }
-        Mat newImage = Imgcodecs.imread(fileName, constant);
+    public static Mat openFile(String fileName) throws Exception {
+      
+        Mat newImage = Imgcodecs.imread(fileName);
         if (newImage.dataAddr() == 0) {
             throw new Exception("Couldn't open file " + fileName);
         }

@@ -27,10 +27,10 @@ public class MainFrame extends JFrame {
     private static JLabel image = new JLabel("");
     private static Mat getImage;
 
-    public MainFrame(int width, int height, String frameName, String imagePath, int flag) throws Exception {
+    public MainFrame(int width, int height, String frameName, String imagePath) throws Exception {
 
         super(frameName);
-        getImage = ImageHelpers.openFile(imagePath, flag);
+        getImage = ImageHelpers.openFile(imagePath);
         setImage();
         panel = new MyPanel();
         add(panel, BorderLayout.WEST);

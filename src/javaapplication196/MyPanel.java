@@ -26,23 +26,21 @@ import org.opencv.core.Mat;
 public class MyPanel extends JPanel {
 
     private JLabel label;
-    private JRadioButton buttons[] = new JRadioButton[4];
-    public ButtonGroup buttonGroup;
-    private final String filters[] = {"None", "Blur", "GaussianBlur", "Median"};
-    private final Filter filter[] = {new GaussianBlur(), new Blur(), new Median()};
+    private JRadioButton buttons[] = new JRadioButton[5];
+    private ButtonGroup buttonGroup;
+    private final String filters[] = {"None", "Blur", "GaussianBlur", "Median","Gray"};
+    private final Filter filter[] = {new GaussianBlur(), new Blur(), new Median(),new Gray()};
 
     public MyPanel() {
 
-        //   setLayout(new FlowLayout());
         label = new JLabel("Filter:");
         buttonGroup = new ButtonGroup();
         add(label);
         addRadioButtons();
-        //  System.out.println(buttons[0].getSelectedIcon());
-        //add(buttons[]);
     }
 
     public void addRadioButtons() {
+        
         for (int i = 0; i < filters.length; i++) {
             buttons[i] = new JRadioButton(filters[i]);
             buttons[i].setFocusable(false);
@@ -53,6 +51,7 @@ public class MyPanel extends JPanel {
     }
 
     public String getSelectedButton() {
+        
         String selected = "";
         for (int i = 0; i < buttons.length; i++) {
             if (buttons[i].isSelected()) {

@@ -17,8 +17,10 @@ public class Blur implements Filter {
 
     @Override
     public Mat applyFilter(Mat image) {
+        
         Mat mat = new Mat();
         Imgproc.blur(image, mat, new Size(4.0, 4.0));
+        
         return mat;
     }
 

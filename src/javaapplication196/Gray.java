@@ -6,22 +6,20 @@
 package javaapplication196;
 
 import org.opencv.core.Mat;
-import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 
 /**
  *
  * @author moh
  */
-public class GaussianBlur implements Filter {
+public class Gray implements Filter {
 
     @Override
-    public Mat applyFilter(Mat image) {
+    public Mat applyFilter(Mat src) {
+        Mat des= new Mat ();
+        Imgproc.cvtColor(src,des, Imgproc.COLOR_RGB2GRAY);
         
-        Mat mat = new Mat();
-        Imgproc.GaussianBlur(image, mat, new Size(3.0, 3.0), 17);
-        
-        return mat;
+        return des;
     }
-
+    
 }

@@ -16,8 +16,10 @@ public class Median implements Filter {
 
     @Override
     public Mat applyFilter(Mat image) {
+        
         Mat mat = new Mat();
         Imgproc.medianBlur(image, mat, 5);
+        
         return mat;
     }
 

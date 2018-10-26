@@ -24,7 +24,8 @@ public class JavaApplication196 {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        MainFrame frame = new MainFrame(600, 400, "GUI", "C:\\Users\\moh\\Desktop\\opencvTut\\image.jpg", 5);
+
+        MainFrame frame = new MainFrame(600, 400, "GUI", "C:\\Users\\moh\\Desktop\\opencvTut\\image.jpg");
 
     }
 
