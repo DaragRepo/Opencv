@@ -27,7 +27,7 @@ public class MyPanel extends JPanel {
 
     private JLabel label;
     private ButtonGroup buttonGroup;
-    private final Filter filter[] = {new GaussianBlur(), new Blur(), new Median(), new Gray(), new HistogramEqualization()};
+    private final Filter filter[] = MainFrame.getFilter();
     private final String filters[] = new String [filter.length+1];
     private JRadioButton buttons[] = new JRadioButton[filter.length+1];
     public MyPanel() {
@@ -40,7 +40,7 @@ public class MyPanel extends JPanel {
     }
 
     // get the names of the filters using class names and assign them to the filter array 
-    public void getNames() {
+    private void getNames() {
         filters[0] = "None";
         int j = 1;
         for (int i = 0; i < filter.length; i++) {
@@ -49,7 +49,7 @@ public class MyPanel extends JPanel {
             }
         }
     // a loop for adding the radio buttons names dynamically using the filter names 
-    public void addRadioButtons() {
+    private void addRadioButtons() {
         for (int i = 0; i < filters.length; i++) {
             buttons[i] = new JRadioButton(filters[i]);
             buttons[i].setFocusable(false);
@@ -60,7 +60,7 @@ public class MyPanel extends JPanel {
         buttons[0].setSelected(true);
     }
     // get the selected radio button
-    public String getSelectedButton() {
+    private String getSelectedButton() {
 
         String selected = "";
         for (int i = 0; i < buttons.length; i++) {

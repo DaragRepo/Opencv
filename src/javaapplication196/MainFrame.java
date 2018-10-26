@@ -26,13 +26,16 @@ public class MainFrame extends JFrame {
     private MyPanel panel;
     private static JLabel image = new JLabel("");
     private static Mat getImage;
-
-    public MainFrame(int width, int height, String frameName, String imagePath) throws Exception {
+    private static Filter filter [];
+    public MainFrame(int width, int height, String frameName, String imagePath,Filter filter[]) throws Exception {
 
         super(frameName);
         getImage = ImageHelpers.openFile(imagePath);
         setImage();
+        MainFrame.filter = filter;
         panel = new MyPanel();
+        panel.setAlignmentX(TOP_ALIGNMENT);
+        panel.setAlignmentY(TOP_ALIGNMENT);
         add(panel, BorderLayout.NORTH);
         panel.add(image,BorderLayout.CENTER);
      //   image.setHorizontalAlignment(JLabel.CENTER);
@@ -45,7 +48,9 @@ public class MainFrame extends JFrame {
         setVisible(true);
 
     }
-
+    public static Filter[] getFilter () {
+        return MainFrame.filter;
+    }
     public static Mat getImage() {
         return getImage;
     }
