@@ -33,8 +33,11 @@ public class MainFrame extends JFrame {
         getImage = ImageHelpers.openFile(imagePath);
         setImage();
         panel = new MyPanel();
-        add(panel, BorderLayout.WEST);
-        add(image, BorderLayout.CENTER);
+        add(panel, BorderLayout.NORTH);
+        panel.add(image,BorderLayout.CENTER);
+     //   image.setHorizontalAlignment(JLabel.CENTER);
+       // image.setVerticalAlignment(JLabel.CENTER);
+       // add(image, BorderLayout.CENTER);
         setSize(width, height);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

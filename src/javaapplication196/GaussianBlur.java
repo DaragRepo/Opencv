@@ -17,10 +17,10 @@ public class GaussianBlur implements Filter {
 
     @Override
     public Mat applyFilter(Mat image) {
-        
+
         Mat mat = new Mat();
         Imgproc.GaussianBlur(image, mat, new Size(3.0, 3.0), 17);
-        
+
         return mat;
     }
 

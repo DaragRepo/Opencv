@@ -12,15 +12,17 @@ import org.opencv.imgproc.Imgproc;
  *
  * @author moh
  */
-public class Median implements Filter {
+public class HistogramEqualization implements Filter {
 
     @Override
-    public Mat applyFilter(Mat image) {
+    public Mat applyFilter(Mat src) {
 
-        Mat mat = new Mat();
-        Imgproc.medianBlur(image, mat, 5);
+        Mat des = new Mat();
+        Mat img = new Mat();
+        Imgproc.cvtColor(src, des, Imgproc.COLOR_RGB2GRAY);
+        Imgproc.equalizeHist(des, img);
 
-        return mat;
+        return img;
     }
 
 }
