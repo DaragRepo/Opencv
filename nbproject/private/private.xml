@@ -4,9 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/moh/Documents/NetBeansProjects/JavaApplication196/src/javaapplication196/MyPanel.java</file>
-            <file>file:/C:/Users/moh/Documents/NetBeansProjects/JavaApplication196/src/javaapplication196/Filters.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/JavaApplication196/src/javaapplication196/Blur.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/JavaApplication196/src/javaapplication196/Gray.java</file>
             <file>file:/C:/Users/moh/Documents/NetBeansProjects/JavaApplication196/src/javaapplication196/MainFrame.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/JavaApplication196/src/javaapplication196/ImageHelpers.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/JavaApplication196/src/javaapplication196/GaussianBlur.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/JavaApplication196/src/javaapplication196/Median.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/JavaApplication196/src/javaapplication196/HistogramEqualization.java</file>
             <file>file:/C:/Users/moh/Documents/NetBeansProjects/JavaApplication196/src/javaapplication196/JavaApplication196.java</file>
+            <file>file:/C:/Users/moh/Documents/NetBeansProjects/JavaApplication196/src/javaapplication196/Filter.java</file>
         </group>
     </open-files>
 </project-private>

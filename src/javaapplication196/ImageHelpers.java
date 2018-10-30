@@ -51,6 +51,12 @@ public class ImageHelpers {
         return loadedImage;
     }
 
+    public static Image getImageTransformered(Transformer transformer, Mat image) {
+        Mat img = transformer.transform(image);
+        Image loadedImage = toBufferedImage(img);
+        return loadedImage;
+    }
+    
     public static Image getImage(Mat image) {
         Image loadedImage = toBufferedImage(image);
         return loadedImage;

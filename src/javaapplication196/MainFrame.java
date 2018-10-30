@@ -24,23 +24,27 @@ import static org.opencv.imgcodecs.Imgcodecs.IMREAD_GRAYSCALE;
 public class MainFrame extends JFrame {
 
     private MyPanel panel;
+    private TransformerPanel transformerPanel;
     private static JLabel image = new JLabel("");
     private static Mat getImage;
-    private static Filter filter [];
-    public MainFrame(int width, int height, String frameName, String imagePath,Filter filter[]) throws Exception {
+    private static Filter filter[];
+    private static Transformer transformer[];
+
+    public MainFrame(int width, int height, String frameName, String imagePath, Filter filter[], Transformer transformer[]) throws Exception {
 
         super(frameName);
         getImage = ImageHelpers.openFile(imagePath);
         setImage();
         MainFrame.filter = filter;
+        MainFrame.transformer = transformer;
         panel = new MyPanel();
-        panel.setAlignmentX(TOP_ALIGNMENT);
-        panel.setAlignmentY(TOP_ALIGNMENT);
+        transformerPanel = new TransformerPanel();
         add(panel, BorderLayout.NORTH);
-        panel.add(image,BorderLayout.CENTER);
+        add(transformerPanel,BorderLayout.PAGE_END);
+        panel.add(image, BorderLayout.CENTER);
      //   image.setHorizontalAlignment(JLabel.CENTER);
-       // image.setVerticalAlignment(JLabel.CENTER);
-       // add(image, BorderLayout.CENTER);
+        // image.setVerticalAlignment(JLabel.CENTER);
+        // add(image, BorderLayout.CENTER);
         setSize(width, height);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,9 +52,20 @@ public class MainFrame extends JFrame {
         setVisible(true);
 
     }
-    public static Filter[] getFilter () {
+
+    public static Filter[] getFilter() {
         return MainFrame.filter;
     }
+
+    public static Transformer[] getTransformer() {
+        return MainFrame.transformer;
+    }
+    
+    public static void setImageTransformed(Mat image , Transformer transformer) {
+         MainFrame.image.setIcon(new ImageIcon(ImageHelpers.getImageTransformered(transformer, image)));;
+    }
+    
+
     public static Mat getImage() {
         return getImage;
     }
